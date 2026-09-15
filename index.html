@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ALMES37 — портфолио веб-разработчика</title>
+  <meta name="description" content="Портфолио: сайты с 3D, анимацией и характером. Пирамида, артефакты и частицы — прямо в браузере.">
+  <meta name="theme-color" content="#b9a98f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;400;500&family=Unbounded:wght@800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body data-scene="hero" class="is-intro">
+  <canvas id="gl" aria-hidden="true"></canvas>
+
+  <!-- Загрузка -->
+  <div class="loader" id="loader" role="status">
+    <div class="loader__cells" id="loaderCells" aria-hidden="true"></div>
+    <span class="sr-only" id="loaderPct">Загрузка 0%</span>
+  </div>
+
+  <!-- Постоянный интерфейс -->
+  <header class="ui ui--tl">
+    <a class="brand" href="#top" id="brand" aria-label="ALMES37, вернуться к пирамиде">ALMES37</a>
+    <div class="fade" data-show="hero">
+      <p class="meta">// Портфолио © 2026</p>
+      <p class="meta">Веб-дизайн и разработка.<br>Сайты, которые запоминают.</p>
+    </div>
+  </header>
+
+  <aside class="ui ui--tr fade" data-show="hero">
+    <p class="kicker">////// Манифест</p>
+    <p class="manifesto" data-scramble>Строю сайты, которые стоят веками: 3D, живое движение и чистый код без шаблонов.</p>
+    <p class="credit">Идея взята с сайта <a href="https://www.igloo.inc/" target="_blank" rel="noopener noreferrer">Igloo Inc.</a></p>
+  </aside>
+
+  <!-- Разметка пирамиды: линии и числа вокруг курсора -->
+  <div class="phud" id="pyrHud" aria-hidden="true">
+    <svg class="hud__svg" id="pyrSvg"></svg>
+  </div>
+
+  <div class="ui ui--bl">
+    <p class="hint fade" data-show="hero">Наведите на пирамиду.<br>Листайте вниз, чтобы начать раскопки.</p>
+    <button class="sound" id="sound" type="button" aria-pressed="false">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor"/><path class="sound__wave" d="M11 5.5c1 .8 1 4.2 0 5M13 4c2 1.6 2 6.4 0 8" stroke="currentColor" fill="none"/></svg>
+      <span id="soundLabel">Звук: выкл</span>
+    </button>
+  </div>
+
+  <nav class="rail" aria-label="Разделы">
+    <button type="button" data-go="hero">Пирамида</button>
+    <button type="button" data-go="artifacts">Артефакты</button>
+    <button type="button" data-go="squares">Врата</button>
+    <button type="button" data-go="podium">Фигуры</button>
+    <span class="rail__track"><i id="railFill"></i></span>
+  </nav>
+
+  <!-- HUD артефактов: линии и подписи рисуются поверх 3D -->
+  <div class="hud fade" data-show="artifacts" id="hud">
+    <svg class="hud__svg" id="hudSvg"></svg>
+  </div>
+  <div class="bgcodes fade" data-show="artifacts" aria-hidden="true">
+    <span style="left:4%;top:18%">GZ 29.97</span>
+    <span style="right:6%;top:12%">N-2560</span>
+    <span style="left:8%;bottom:14%">KH 146.6</span>
+    <span style="right:4%;bottom:22%">SET 07</span>
+  </div>
+
+  <div class="gate fade" data-show="squares" aria-hidden="true">
+    <p class="kicker">////// Врата</p>
+    <p class="gate__text" data-scramble>Каждый проект проходит через ту же дверь: идея, форма, движение, запуск.</p>
+  </div>
+
+  <section class="contact fade" data-show="podium" aria-labelledby="contactTitle">
+    <p class="kicker">////// О проекте</p>
+    <h2 class="contact__title" id="contactTitle">Сделано<br>для портфолио</h2>
+    <p class="contact__text">Идея, структура и эффекты взяты с сайта <a href="https://www.igloo.inc/" target="_blank" rel="noopener noreferrer">Igloo Inc.</a> Это учебная работа для портфолио, а не коммерческий проект.</p>
+  </section>
+
+  <div class="models fade" data-show="podium" role="group" aria-label="Фигура из частиц">
+    <button type="button" data-model="0" aria-pressed="true">Сфинкс</button>
+    <button type="button" data-model="1" aria-pressed="false">Искра</button>
+    <button type="button" data-model="2" aria-pressed="false">Уточка</button>
+  </div>
+
+  <!-- Текст для поисковиков и скринридеров -->
+  <main class="sr-only" id="top">
+    <h1>ALMES37 — портфолио веб-разработчика</h1>
+    <p>Делаю сайты с 3D-графикой, анимацией и нешаблонным дизайном.</p>
+    <h2>Проекты</h2>
+    <ul id="srProjects"></ul>
+    <h2>О проекте</h2>
+    <p>Идея и эффекты взяты с сайта <a href="https://www.igloo.inc/">Igloo Inc.</a> Сделано для портфолио.</p>
+  </main>
+
+  <noscript><p class="nojs">Для просмотра сайта включите JavaScript.</p></noscript>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
