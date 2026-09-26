@@ -13,8 +13,8 @@
   <script type="importmap">
   {
     "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      "three": "./js/vendor/three/three.module.js",
+      "three/addons/": "./js/vendor/three/addons/"
     }
   }
   </script>
@@ -25,7 +25,8 @@
   <!-- Загрузка -->
   <div class="loader" id="loader" role="status">
     <div class="loader__cells" id="loaderCells" aria-hidden="true"></div>
-    <span class="sr-only" id="loaderPct">Загрузка 0%</span>
+    <span class="loader__pct" id="loaderPct">Загрузка 0%</span>
+    <p class="loader__stuck" id="loaderStuck" hidden>Загрузка идёт дольше обычного.<br><a href="">Обновить страницу</a></p>
   </div>
 
   <!-- Постоянный интерфейс -->
@@ -104,5 +105,11 @@
 
   <noscript><p class="nojs">Для просмотра сайта включите JavaScript.</p></noscript>
   <script type="module" src="js/main.js"></script>
+  <script>
+    // если сцена так и не запустилась (плохая сеть, файл не пришёл) — не оставляем пустой экран
+    setTimeout(function () {
+      if (!document.getElementById("loader").classList.contains("is-done")) document.getElementById("loaderStuck").hidden = false;
+    }, 20000);
+  </script>
 </body>
 </html>

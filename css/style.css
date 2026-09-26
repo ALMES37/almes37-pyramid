@@ -215,6 +215,9 @@ body.is-intro .ui--tr.fade { transform: translateY(8px); }
 .loader__cells i { display: block; width: 7px; height: 11px; background: var(--bone); }
 .loader__cells i.is-dash { height: 1px; opacity: .75; }
 .loader__cells i.is-glitch { height: 5px; opacity: .9; }
+.loader__pct { color: var(--umber); font-size: 11px; letter-spacing: .08em; opacity: .75; }
+.loader__stuck { margin: 0; max-width: 32ch; text-align: center; color: var(--umber); line-height: 1.7; }
+.loader__stuck a { color: inherit; }
 
 .nojs { position: fixed; inset: auto 0 40% 0; text-align: center; z-index: 30; }
 
