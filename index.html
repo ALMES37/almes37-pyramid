@@ -10,14 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;400;500&family=Unbounded:wght@800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "./js/vendor/three/three.module.js",
-      "three/addons/": "./js/vendor/three/addons/"
-    }
-  }
-  </script>
 </head>
 <body data-scene="hero" class="is-intro">
   <canvas id="gl" aria-hidden="true"></canvas>
@@ -104,7 +96,7 @@
   </main>
 
   <noscript><p class="nojs">Для просмотра сайта включите JavaScript.</p></noscript>
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js?v=20260926"></script>
   <script>
     // если сцена так и не запустилась (плохая сеть, файл не пришёл) — не оставляем пустой экран
     setTimeout(function () {

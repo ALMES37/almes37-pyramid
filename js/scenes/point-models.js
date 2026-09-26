@@ -1,7 +1,7 @@
 // Модели из частиц, собранные из простых фигур (SDF): сфинкс, искра, резиновая уточка.
 // Точки берутся из тонкой «оболочки» каждой фигуры.
 // Все векторы создаются один раз заранее — так выборка точек идёт быстро.
-import * as THREE from "three";
+import * as THREE from "../vendor/three/three.module.js";
 import { mulberry32 } from "../lib/noise.js";
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);

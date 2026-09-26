@@ -1,5 +1,5 @@
 // Три артефакта: самородок золота, блок пирамиды, алмаз.
-import * as THREE from "three";
+import * as THREE from "../vendor/three/three.module.js";
 import { makeNoise2D, mulberry32 } from "../lib/noise.js";
 
 const n2 = makeNoise2D(99);

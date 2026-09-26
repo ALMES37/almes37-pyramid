@@ -1,7 +1,7 @@
 // Пирамида из каменных блоков. Под курсором блоки расходятся только в небольшой
 // области: швы и внутренние грани загораются золотом, вокруг проступает сетка линий.
 // Когда курсор уходит, блоки сами встают на место.
-import * as THREE from "three";
+import * as THREE from "../vendor/three/three.module.js";
 import { GLSL_NOISE, mulberry32 } from "../lib/noise.js";
 
 export const PYR = { layers: 13, bw: 1.0, bh: 0.72 };

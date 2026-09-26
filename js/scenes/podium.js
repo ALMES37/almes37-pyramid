@@ -1,7 +1,7 @@
 // Сцена 4: квадратный подиум и фигура из частиц внутри невидимого вертикального
 // «стекла». Стенки видны только там, куда ударяются разогнанные частицы.
 // Фигуру можно крутить мышкой вокруг вертикальной оси.
-import * as THREE from "three";
+import * as THREE from "../vendor/three/three.module.js";
 import { buildModels } from "./point-models.js";
 import { createSand } from "./hero-atmos.js";
 import { GLSL_NOISE, damp, clamp, mulberry32 } from "../lib/noise.js";

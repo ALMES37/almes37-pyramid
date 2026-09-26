@@ -1,9 +1,9 @@
 // Главный файл: рендер, бесконечная прокрутка по сценам, переходы, интерфейс, звук.
-import * as THREE from "three";
-import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
-import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
-import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
-import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
+import * as THREE from "./vendor/three/three.module.js";
+import { EffectComposer } from "./vendor/three/addons/postprocessing/EffectComposer.js";
+import { UnrealBloomPass } from "./vendor/three/addons/postprocessing/UnrealBloomPass.js";
+import { OutputPass } from "./vendor/three/addons/postprocessing/OutputPass.js";
+import { ShaderPass } from "./vendor/three/addons/postprocessing/ShaderPass.js";
 import { SceneMixPass, FinalShader } from "./post.js";
 import { createHeroScene } from "./scenes/hero.js";
 import { createArtifactsScene } from "./scenes/artifacts.js";

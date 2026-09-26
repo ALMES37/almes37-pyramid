@@ -1,6 +1,6 @@
 // Сцена 2: артефакты-проекты с HUD-разметкой (линии, подписи, «живые» числа).
-import * as THREE from "three";
-import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import * as THREE from "../vendor/three/three.module.js";
+import { RoomEnvironment } from "../vendor/three/addons/environments/RoomEnvironment.js";
 import { makeGoldNugget, makePyramidBlock, makeDiamond, makeBrackets } from "./artifacts-models.js";
 import { createSand } from "./hero-atmos.js";
 import { damp, smoothstep, clamp } from "../lib/noise.js";

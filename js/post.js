@@ -1,7 +1,7 @@
 // Постобработка: смешивание двух сцен (переход с песчаным растворением,
 // глитчем и радужным сдвигом) + финальный слой (аберрация, виньетка, зерно).
-import * as THREE from "three";
-import { Pass, FullScreenQuad } from "three/addons/postprocessing/Pass.js";
+import * as THREE from "./vendor/three/three.module.js";
+import { Pass, FullScreenQuad } from "./vendor/three/addons/postprocessing/Pass.js";
 import { GLSL_NOISE } from "./lib/noise.js";
 
 const VERT = /* glsl */ `

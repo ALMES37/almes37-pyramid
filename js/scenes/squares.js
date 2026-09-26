@@ -1,8 +1,8 @@
 // Сцена 3: вложенные квадратные «врата» из каменных сегментов.
 // Сегменты собираются, рамки выравниваются, загорается свет, камера ныряет в центр.
-import * as THREE from "three";
-import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
-import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import * as THREE from "../vendor/three/three.module.js";
+import { RoundedBoxGeometry } from "../vendor/three/addons/geometries/RoundedBoxGeometry.js";
+import { RoomEnvironment } from "../vendor/three/addons/environments/RoomEnvironment.js";
 import { mulberry32, damp, smoothstep, clamp, lerp } from "../lib/noise.js";
 import { sandstoneMap } from "./artifacts-models.js";
 

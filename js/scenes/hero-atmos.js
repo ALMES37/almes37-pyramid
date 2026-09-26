@@ -1,6 +1,6 @@
 // Атмосфера пустыни: летящий песок (вместо снега), штрихи ветра,
 // пылевой вихрь вокруг пирамиды и «строительные» линии.
-import * as THREE from "three";
+import * as THREE from "../vendor/three/three.module.js";
 import { GLSL_NOISE, mulberry32 } from "../lib/noise.js";
 
 const rand = mulberry32(2024);

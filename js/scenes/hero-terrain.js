@@ -1,8 +1,8 @@
 // Пустыня: плато под пирамидой, гребни дюн, дальние барханы.
 // Песок блестит на солнце и продавливается под курсором: остаётся тёмный след,
 // который сам исчезает через несколько секунд.
-import * as THREE from "three";
-import { FullScreenQuad } from "three/addons/postprocessing/Pass.js";
+import * as THREE from "../vendor/three/three.module.js";
+import { FullScreenQuad } from "../vendor/three/addons/postprocessing/Pass.js";
 import { makeNoise2D, fbm2, smoothstep } from "../lib/noise.js";
 import { GLSL_NOISE } from "../lib/noise.js";
 

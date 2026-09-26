@@ -3,7 +3,7 @@
 // камера опускается, каркас превращается в камень, проявляется пустыня.
 // Курсор на пирамиде — блоки расходятся только вокруг него, проступают линии и числа.
 // Курсор на песке — песок продавливается, след сам исчезает.
-import * as THREE from "three";
+import * as THREE from "../vendor/three/three.module.js";
 import { createTerrain, rayHitSand } from "./hero-terrain.js";
 import { createPyramid } from "./hero-pyramid.js";
 import { createSand, createStreaks, createVortex, createDustVeil, createConstructionLines } from "./hero-atmos.js";
